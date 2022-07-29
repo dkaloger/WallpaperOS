@@ -2,17 +2,12 @@ from PIL import Image
 import requests
 from io import BytesIO
 import ctypes
-import pathlib
 from datetime import datetime
-
-import getpass
 import os,sys
-USER_NAME = getpass.getuser()
 
-if getattr(sys, 'frozen', False):
-    application_path = os.path.dirname(sys.executable)
-elif __file__:
-    application_path = os.path.dirname(__file__)
+
+application_path = os.path.dirname(sys.executable)
+
 
 now = datetime.now() 
 response = requests.get("https://raw.githubusercontent.com/dkaloger/AIwallpaperimages/main/Images/"+ now.strftime("%m-%d-%Y")+ ".png")
