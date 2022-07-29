@@ -4,7 +4,7 @@ import os
 
 
 path = "C:\WallpaperOS"
-versionR = requests.get("https://raw.githubusercontent.com/dkaloger/AIwallpaperimages/main/Version")
+versionR = requests.get("https://raw.githubusercontent.com/dkaloger/AIwallpaperimages/main/Version.txt")
 def Update():
     
     urllib.request.urlretrieve("https://raw.githubusercontent.com/dkaloger/AIwallpaperimages/main/WallpaperOS.exe", path+"/WallpaperOS.exe")
@@ -17,7 +17,7 @@ if not os.path.exists(path):
 if not (os.path.exists(path+"/Version.txt")):
     Update()
 
-elif (versionR.text!= open(path+"/Version.txt",r).read()):
+elif (versionR.text!= open(path+"/Version.txt").read()):
     Update()
 
 
